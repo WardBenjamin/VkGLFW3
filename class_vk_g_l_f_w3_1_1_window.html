@@ -91,32 +91,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="#events">Events</a> &#124;
 <a href="class_vk_g_l_f_w3_1_1_window-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">VkGLFW3.Window Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a native window handle and acts as the main entry point for all GLFW functionality, excluding Init and Terminate.  
+ <a href="class_vk_g_l_f_w3_1_1_window.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for VkGLFW3.Window:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_vk_g_l_f_w3_1_1_window__inherit__graph.png" border="0" usemap="#_vk_g_l_f_w3_8_window_inherit__map" alt="Inheritance graph"/></div>
-<map name="_vk_g_l_f_w3_8_window_inherit__map" id="_vk_g_l_f_w3_8_window_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for VkGLFW3.Window:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_vk_g_l_f_w3_1_1_window__coll__graph.png" border="0" usemap="#_vk_g_l_f_w3_8_window_coll__map" alt="Collaboration graph"/></div>
-<map name="_vk_g_l_f_w3_8_window_coll__map" id="_vk_g_l_f_w3_8_window_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:abc5793714c1c3f7b4113970de4ae1c76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#abc5793714c1c3f7b4113970de4ae1c76">Window</a> (int initialWidth, int initialHeight, string title)</td></tr>
+<tr class="memdesc:abc5793714c1c3f7b4113970de4ae1c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a window meant to be used with Vulkan (aka there is no associated OpenGL context) and initialize event callbacks.  <a href="#abc5793714c1c3f7b4113970de4ae1c76">More...</a><br /></td></tr>
+<tr class="separator:abc5793714c1c3f7b4113970de4ae1c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae939ce41dcecfa4a2dfc678fb51b3300"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#ae939ce41dcecfa4a2dfc678fb51b3300">Show</a> ()</td></tr>
 <tr class="memdesc:ae939ce41dcecfa4a2dfc678fb51b3300"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function makes the specified window visible if it was previously hidden. If the window is already visible or is in full screen mode, this function does nothing.  <a href="#ae939ce41dcecfa4a2dfc678fb51b3300">More...</a><br /></td></tr>
 <tr class="separator:ae939ce41dcecfa4a2dfc678fb51b3300"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,19 +144,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a393d97e41ed16a0ac80e720a093e9455"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes all pending events.  <a href="#a393d97e41ed16a0ac80e720a093e9455">More...</a><br /></td></tr>
 <tr class="separator:a393d97e41ed16a0ac80e720a093e9455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a237221a588eebc6c0028a6a425f3cc52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#a237221a588eebc6c0028a6a425f3cc52">SetSize</a> (int <a class="el" href="class_vk_g_l_f_w3_1_1_window.html#a310e05cab7b7955ee58ca5dfefa15a8d">width</a>, int height)</td></tr>
+<tr class="memdesc:a237221a588eebc6c0028a6a425f3cc52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented. Sets the size of the client area of the specified window.  <a href="#a237221a588eebc6c0028a6a425f3cc52">More...</a><br /></td></tr>
 <tr class="separator:a237221a588eebc6c0028a6a425f3cc52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a622e586f849f92b8f705d244505bd208"><td class="memItemLeft" align="right" valign="top">unsafe void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#a622e586f849f92b8f705d244505bd208">SetIcon</a> (<a class="el" href="struct_vk_g_l_f_w3_1_1_image_descriptor.html">ImageDescriptor</a>?image)</td></tr>
 <tr class="memdesc:a622e586f849f92b8f705d244505bd208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the icon for the window.  <a href="#a622e586f849f92b8f705d244505bd208">More...</a><br /></td></tr>
 <tr class="separator:a622e586f849f92b8f705d244505bd208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41342358f767b9ad95b5335a07ccfc7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58">VkResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#a41342358f767b9ad95b5335a07ccfc7e">CreateWindowSurface</a> (IntPtr instance, IntPtr allocator)</td></tr>
+<tr class="separator:a41342358f767b9ad95b5335a07ccfc7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab81694753855b8683c94aae2e69be109"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#ab81694753855b8683c94aae2e69be109">GetPhysicalDevicePresentationSupport</a> (IntPtr instance, IntPtr device, uint queuefamily)</td></tr>
+<tr class="separator:ab81694753855b8683c94aae2e69be109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86664a372f0c05368c4b9421a6317c3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#a86664a372f0c05368c4b9421a6317c3c">Dispose</a> ()</td></tr>
 <tr class="memdesc:a86664a372f0c05368c4b9421a6317c3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the specified window and its context.  <a href="#a86664a372f0c05368c4b9421a6317c3c">More...</a><br /></td></tr>
 <tr class="separator:a86664a372f0c05368c4b9421a6317c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aff64327e9b09cfb9567d801794d781c0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_vk_g_l_f_w3_1_1_window.html">Window</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#aff64327e9b09cfb9567d801794d781c0">CreateVulkan</a> (int <a class="el" href="class_vk_g_l_f_w3_1_1_window.html#a310e05cab7b7955ee58ca5dfefa15a8d">width</a>, int height, string title)</td></tr>
-<tr class="memdesc:aff64327e9b09cfb9567d801794d781c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a window meant to be used with Vulkan (aka there is no associated OpenGL context) and initialize event callbacks.  <a href="#aff64327e9b09cfb9567d801794d781c0">More...</a><br /></td></tr>
-<tr class="separator:aff64327e9b09cfb9567d801794d781c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -167,12 +168,20 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a72c89cb344bef4f7a113a8370fe51caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented. Title property.  <a href="#a72c89cb344bef4f7a113a8370fe51caa">More...</a><br /></td></tr>
 <tr class="separator:a72c89cb344bef4f7a113a8370fe51caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a310e05cab7b7955ee58ca5dfefa15a8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#a310e05cab7b7955ee58ca5dfefa15a8d">width</a></td></tr>
+<tr class="memdesc:a310e05cab7b7955ee58ca5dfefa15a8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the size of the client area of the specified window.  <a href="#a310e05cab7b7955ee58ca5dfefa15a8d">More...</a><br /></td></tr>
 <tr class="separator:a310e05cab7b7955ee58ca5dfefa15a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08cab251eb5be3b74b01b5b236aeb65"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#ae08cab251eb5be3b74b01b5b236aeb65">VulkanSupported</a> =&gt; Convert.ToBoolean(VulkanSupported_())</td></tr>
+<tr class="separator:ae08cab251eb5be3b74b01b5b236aeb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a21a0e5ab0c6400351dd4e2ba26990664"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#a21a0e5ab0c6400351dd4e2ba26990664">Dispose</a> (bool disposing)</td></tr>
 <tr class="separator:a21a0e5ab0c6400351dd4e2ba26990664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a83b9797473afa1a48119540e5a427c12"><td class="memItemLeft" align="right" valign="top">unsafe string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html#a83b9797473afa1a48119540e5a427c12">RequiredInstanceExtensions</a><code> [get]</code></td></tr>
+<tr class="separator:a83b9797473afa1a48119540e5a427c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
 Events</h2></td></tr>
@@ -184,27 +193,25 @@ Events</h2></td></tr>
 <tr class="separator:a74435e68387787cc80a66ec03150c5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00009">9</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aff64327e9b09cfb9567d801794d781c0"></a>
+<div class="textblock"><p>Represents a native window handle and acts as the main entry point for all GLFW functionality, excluding Init and Terminate. </p>
+
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00015">15</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="abc5793714c1c3f7b4113970de4ae1c76"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="class_vk_g_l_f_w3_1_1_window.html">Window</a> VkGLFW3.Window.CreateVulkan </td>
+          <td class="memname">VkGLFW3.Window.Window </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramname"><em>initialWidth</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
+          <td class="paramname"><em>initialHeight</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -218,19 +225,14 @@ Events</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Creates a window meant to be used with Vulkan (aka there is no associated OpenGL context) and initialize event callbacks. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">width</td><td>Initial window width</td></tr>
-    <tr><td class="paramname">height</td><td>Initial window height</td></tr>
-    <tr><td class="paramname">title</td><td><a class="el" href="class_vk_g_l_f_w3_1_1_window.html">Window</a> title</td></tr>
+    <tr><td class="paramname">initialWidth</td><td>Initial window width</td></tr>
+    <tr><td class="paramname">initialHeight</td><td>Initial window height</td></tr>
+    <tr><td class="paramname">title</td><td><a class="el" href="class_vk_g_l_f_w3_1_1_window.html" title="Represents a native window handle and acts as the main entry point for all GLFW functionality, excluding Init and Terminate. ">Window</a> title</td></tr>
   </table>
   </dd>
 </dl>
@@ -242,7 +244,36 @@ Events</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00074">74</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00041">41</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a41342358f767b9ad95b5335a07ccfc7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58">VkResult</a> VkGLFW3.Window.CreateWindowSurface </td>
+          <td>(</td>
+          <td class="paramtype">IntPtr&#160;</td>
+          <td class="paramname"><em>instance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IntPtr&#160;</td>
+          <td class="paramname"><em>allocator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00249">249</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
 
 </div>
 </div>
@@ -285,7 +316,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00283">283</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00355">355</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
 
 </div>
 </div>
@@ -305,7 +336,7 @@ Events</h2></td></tr>
 <p>Destroys the specified window and its context. </p>
 <p>This function destroys the specified window and its context. On calling this function, no further callbacks will be called for that window. </p>
 
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00304">304</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00376">376</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
 
 </div>
 </div>
@@ -323,6 +354,38 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Not implemented. Indicates whether the specified window has input focus. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab81694753855b8683c94aae2e69be109"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int VkGLFW3.Window.GetPhysicalDevicePresentationSupport </td>
+          <td>(</td>
+          <td class="paramtype">IntPtr&#160;</td>
+          <td class="paramname"><em>instance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IntPtr&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>queuefamily</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -415,7 +478,7 @@ Events</h2></td></tr>
 <p>Set the icon for the window. </p>
 <p>This function sets the icon of the specified window. If no image (null) is specified, the window reverts to its default icon. </p>
 
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00160">160</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00179">179</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
 
 </div>
 </div>
@@ -443,7 +506,17 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00151">151</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+<p>Not implemented. Sets the size of the client area of the specified window. </p>
+<p>This function sets the size, in screen coordinates, of the client area of the specified window. For full screen windows, this function updates the resolution of its desired video mode and switches to the video mode closest to it, without affecting the window's context. As the context is unaffected, the bit depths of the framebuffer remain unchanged. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Width, in screen coordinates</td></tr>
+    <tr><td class="paramname">height</td><td>Height, in screen coordinates</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00168">168</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
 
 </div>
 </div>
@@ -492,7 +565,7 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00011">11</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00017">17</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
 
 </div>
 </div>
@@ -508,7 +581,7 @@ Events</h2></td></tr>
 
 <p>Indicated whether the window should be closed. </p>
 
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00058">58</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00080">80</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
 
 </div>
 </div>
@@ -524,7 +597,21 @@ Events</h2></td></tr>
 
 <p>Not implemented. Title property. </p>
 
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00063">63</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00085">85</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae08cab251eb5be3b74b01b5b236aeb65"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VkGLFW3.Window.VulkanSupported =&gt; Convert.ToBoolean(VulkanSupported_())</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00228">228</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
 
 </div>
 </div>
@@ -538,7 +625,33 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00140">140</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+<p>Retrieves the size of the client area of the specified window. </p>
+<p>This function retrieves the size, in screen coordinates, of the client area of the specified window. </p>
+
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00146">146</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a83b9797473afa1a48119540e5a427c12"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsafe string [] VkGLFW3.Window.RequiredInstanceExtensions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00231">231</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
 
 </div>
 </div>
@@ -555,7 +668,7 @@ Events</h2></td></tr>
 
 <p>Will be called if a key has been pressed </p>
 
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00024">24</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00030">30</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
 
 </div>
 </div>
@@ -571,7 +684,7 @@ Events</h2></td></tr>
 
 <p>Will be called if the Size of the window has been changed </p>
 
-<p>Definition at line <a class="el" href="_window_8cs_source.html#l00019">19</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
+<p>Definition at line <a class="el" href="_window_8cs_source.html#l00025">25</a> of file <a class="el" href="_window_8cs_source.html">Window.cs</a>.</p>
 
 </div>
 </div>

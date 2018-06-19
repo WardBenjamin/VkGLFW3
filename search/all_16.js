@@ -33,6 +33,8 @@ var searchData=
   ['vk_5fsuccess',['VK_SUCCESS',['../namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a38d5f94ff3b5c804dbd0ebf9e55652ed',1,'VkGLFW3']]],
   ['vk_5ftimeout',['VK_TIMEOUT',['../namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a91c2e09f15a6a4d9ea4f98d517fb849a',1,'VkGLFW3']]],
   ['vkglfw3',['VkGLFW3',['../namespace_vk_g_l_f_w3.html',1,'']]],
-  ['vkglfw3_2eassemblyinfo_2ecs',['VkGLFW3.AssemblyInfo.cs',['../_vk_g_l_f_w3_8_assembly_info_8cs.html',1,'']]],
-  ['vkresult',['VkResult',['../namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58',1,'VkGLFW3']]]
+  ['vkglfw3_2eassemblyinfo_2ecs',['VkGLFW3.AssemblyInfo.cs',['../_release_2netstandard2_80_2_vk_g_l_f_w3_8_assembly_info_8cs.html',1,'']]],
+  ['vkglfw3_2eassemblyinfo_2ecs',['VkGLFW3.AssemblyInfo.cs',['../_debug_2netstandard2_80_2_vk_g_l_f_w3_8_assembly_info_8cs.html',1,'']]],
+  ['vkresult',['VkResult',['../namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58',1,'VkGLFW3']]],
+  ['vulkansupported',['VulkanSupported',['../class_vk_g_l_f_w3_1_1_window.html#ae08cab251eb5be3b74b01b5b236aeb65',1,'VkGLFW3::Window']]]
 ];
