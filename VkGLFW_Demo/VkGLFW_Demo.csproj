@@ -7,5 +7,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\VkGLFW\VkGLFW3.csproj" />
+    <Content Include="glfw3.dll" CopyToOutputDirectory="PreserveNewest" Visible="true" />
   </ItemGroup>
 </Project>

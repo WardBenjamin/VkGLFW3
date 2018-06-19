@@ -1,6 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>WardBenjamin</Authors>
+    <Version>0.2.0</Version>
+    <Description>Vulkan-focused C# 7 (.NET Standard 2.0) object-oriented window/input system based on GLFW3</Description>
+    <Copyright>Benjamin Ward 2018</Copyright>
+    <RepositoryUrl>https://github.com/WardBenjamin/VkGLFW3</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/WardBenjamin/VkGLFW3</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/WardBenjamin/VkGLFW3/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageTags>Vulkan;GLFW;GLFW3;Window;Platform;Core;VulkanCore;Graphics</PackageTags>
     <Configurations>Release;Debug</Configurations>
     <Platforms>x64</Platforms>
   </PropertyGroup>
