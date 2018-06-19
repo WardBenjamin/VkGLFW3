@@ -8,6 +8,10 @@ using System.Text;
 
 namespace VkGLFW3
 {
+    /// <summary>
+    /// Represents a native window handle and acts as the main entry point for all GLFW
+    /// functionality, excluding Init and Terminate.
+    /// </summary>
     public class Window : IDisposable
     {
         public IntPtr Handle;
@@ -24,10 +28,26 @@ namespace VkGLFW3
         /// Will be called if a key has been pressed
         /// </summary>
         public event EventHandler<KeyEventArgs> KeyChanged;
-
-        private Window(IntPtr windowHandle)
+        
+        /// <summary>
+        /// Creates a window meant to be used with Vulkan (aka there is no associated OpenGL context) and
+        /// initialize event callbacks.
+        /// </summary>
+        /// <param name="initialWidth">Initial window width</param>
+        /// <param name="initialHeight">Initial window height</param>
+        /// <param name="title">Window title</param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        public Window (int initialWidth, int initialHeight, string title)
         {
-            Handle = windowHandle;
+            WindowHint((int) State.ClientApi, (int) State.NoApi);
+
+            Handle = CreateWindow(initialWidth, initialHeight, title, IntPtr.Zero, IntPtr.Zero);
+            
+            if (Handle == IntPtr.Zero)
+            {
+                throw new InvalidOperationException("Window creation failed.");
+            }
 
             _sizeChangedCallback = (_, width, height) =>
             {
@@ -63,28 +83,6 @@ namespace VkGLFW3
         /// Not implemented. Title property.
         /// </summary>
         public string Title => "";
-
-        /// <summary>
-        /// Creates a window meant to be used with Vulkan (aka there is no associated OpenGL context) and
-        /// initialize event callbacks.
-        /// </summary>
-        /// <param name="width">Initial window width</param>
-        /// <param name="height">Initial window height</param>
-        /// <param name="title">Window title</param>
-        /// <returns></returns>
-        /// <exception cref="InvalidOperationException"></exception>
-        public static Window CreateVulkan(int width, int height, string title)
-        {
-            WindowHint((int) State.ClientApi, (int) State.NoApi);
-
-            var handle = CreateWindow(width, height, title, IntPtr.Zero, IntPtr.Zero);
-            if (handle == IntPtr.Zero)
-            {
-                throw new InvalidOperationException("Window creation failed.");
-            }
-
-            return new Window(handle);
-        }
 
         /// <summary>
         /// This function makes the specified window visible if it was previously hidden. If the window is already
@@ -139,6 +137,12 @@ namespace VkGLFW3
             PollEvents_();
         }
 
+        /// <summary>
+        /// Retrieves the size of the client area of the specified window.
+        /// </summary>
+        /// <remarks>
+        /// This function retrieves the size, in screen coordinates, of the client area of the specified window.
+        /// </remarks>
         public (int width, int height) GetSize()
         {
             int width = 0, height = 0;
@@ -150,6 +154,17 @@ namespace VkGLFW3
             return (width, height);
         }
 
+        /// <summary>
+        /// Not implemented. Sets the size of the client area of the specified window. 
+        /// </summary>
+        /// <remarks>
+        /// This function sets the size, in screen coordinates, of the client area of the specified window.
+        /// For full screen windows, this function updates the resolution of its desired video mode and switches to
+        /// the video mode closest to it, without affecting the window's context. As the context is unaffected, the
+        /// bit depths of the framebuffer remain unchanged.
+        /// </remarks>
+        /// <param name="width">Width, in screen coordinates</param>
+        /// <param name="height">Height, in screen coordinates</param>
         public void SetSize(int width, int height)
         {
         }
@@ -319,7 +334,7 @@ namespace VkGLFW3
         [SuppressUnmanagedCodeSecurity]
         [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "glfwCreateWindowSurface")]
-        public static extern VkResult CreateWindowSurface(IntPtr instance, IntPtr window, IntPtr allocator,
+        private static extern VkResult CreateWindowSurface(IntPtr instance, IntPtr window, IntPtr allocator,
             Int64 surface);
 
         [SuppressUnmanagedCodeSecurity]

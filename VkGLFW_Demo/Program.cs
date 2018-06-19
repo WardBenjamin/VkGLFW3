@@ -9,7 +9,7 @@ namespace VkGLFW_Demo
         static void Main(string[] args)
         {
             Glfw.Init();
-            var window = Window.CreateVulkan(800, 600, "VkGLFW3 Demo");
+            var window = new Window(800, 600, "VkGLFW3 Demo");
 
             Console.WriteLine("Window size: {0}", window.GetSize());
             Console.WriteLine("Vulkan supported: {0}", window.VulkanSupported);
