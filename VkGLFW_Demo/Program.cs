@@ -11,7 +11,9 @@ namespace VkGLFW_Demo
             Glfw.Init();
             var window = Window.CreateVulkan(800, 600, "VkGLFW3 Demo");
 
-            Console.WriteLine(window.GetSize());
+            Console.WriteLine("Window size: {0}", window.GetSize());
+            Console.WriteLine("Vulkan supported: {0}", window.VulkanSupported);
+            Console.WriteLine("Required Vulkan instance extensions: {0}", string.Join(", ", window.RequiredInstanceExtensions));
             
             while (!window.ShouldClose)
             {
