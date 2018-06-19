@@ -15,7 +15,25 @@ namespace VkGLFW3
     public class Window : IDisposable
     {
         public IntPtr Handle;
+        
+        /// <summary>
+        /// Indicated whether the window should be closed.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public bool ShouldClose => Convert.ToBoolean(WindowShouldClose(Handle));
 
+        public string Title
+        {
+            get => _title;
+            set
+            {
+                _title = value;
+                SetWindowTitle(Handle, value);
+            }
+        }
+        
+        private string _title;
+        
         private readonly GlfwWindowSizeFun _sizeChangedCallback;
         private readonly GlfwKeyFun _keyPressedCallback;
 
@@ -43,6 +61,7 @@ namespace VkGLFW3
             WindowHint((int) State.ClientApi, (int) State.NoApi);
 
             Handle = CreateWindow(initialWidth, initialHeight, title, IntPtr.Zero, IntPtr.Zero);
+            _title = title;
             
             if (Handle == IntPtr.Zero)
             {
@@ -72,17 +91,6 @@ namespace VkGLFW3
             SizeChanged = (__, _) => { };
             KeyChanged = (__, _) => { };
         }
-
-        /// <summary>
-        /// Indicated whether the window should be closed.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool ShouldClose => Convert.ToBoolean(WindowShouldClose(Handle));
-
-        /// <summary>
-        /// Not implemented. Title property.
-        /// </summary>
-        public string Title => "";
 
         /// <summary>
         /// This function makes the specified window visible if it was previously hidden. If the window is already
@@ -286,7 +294,12 @@ namespace VkGLFW3
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwSetWindowIcon")]
-        internal static extern void SetWindowIcon(IntPtr window, int count, IntPtr images);
+        private static extern void SetWindowIcon(IntPtr window, int count, IntPtr images);
+        
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint="glfwSetWindowTitle")]
+        private static extern void SetWindowTitle(IntPtr window, [MarshalAs(UnmanagedType.LPStr)] string title);
+
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwPollEvents")]

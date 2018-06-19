@@ -14,6 +14,9 @@ namespace VkGLFW_Demo
             Console.WriteLine("Window size: {0}", window.GetSize());
             Console.WriteLine("Vulkan supported: {0}", window.VulkanSupported);
             Console.WriteLine("Required Vulkan instance extensions: {0}", string.Join(", ", window.RequiredInstanceExtensions));
+            Console.WriteLine("Window title: {0}", window.Title);
+
+            window.Title = "Test";
             
             while (!window.ShouldClose)
             {
