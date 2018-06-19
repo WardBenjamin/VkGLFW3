@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Text;
 
 namespace VkGLFW3
 {
     public class Window : IDisposable
     {
         public IntPtr Handle;
-        
+
         private readonly GlfwWindowSizeFun _sizeChangedCallback;
         private readonly GlfwKeyFun _keyPressedCallback;
 
@@ -89,7 +91,7 @@ namespace VkGLFW3
         /// visible or is in full screen mode, this function does nothing.
         /// </summary>
         public void Show() => ShowWindow(Handle);
-        
+
         /// <summary>
         /// This function hides the specified window if it was previously visible. If the window is already hidden or
         /// is in full screen mode, this function does nothing.
@@ -100,23 +102,23 @@ namespace VkGLFW3
         /// Not implemented. Indicates whether the specified window is visible. 
         /// </summary>
         public bool Visible() => false;
-        
+
         /// <summary>
         /// Not implemented. Indicates whether the specified window has decorations such as a border, a close widget, etc.
         /// </summary>
         public bool Decorated() => false;
-        
+
         /// <summary>
         /// Not implemented. Indicates whether the specified window is resizable by the user.
         /// </summary>
         /// <returns></returns>
         public bool Resizable() => false;
-        
+
         /// <summary>
         /// Not implemented. Indicates whether the specified window has input focus.
         /// </summary>
         public bool Focused() => false;
-        
+
         /// <summary>
         /// Not implemented. Indicates whether the specified window is iconified (either manually by the user or via window.Minimize()).
         /// </summary>
@@ -136,7 +138,7 @@ namespace VkGLFW3
         {
             PollEvents_();
         }
-        
+
         public (int width, int height) GetSize()
         {
             int width = 0, height = 0;
@@ -147,8 +149,10 @@ namespace VkGLFW3
 
             return (width, height);
         }
-        
-        public void SetSize(int width, int height) {}
+
+        public void SetSize(int width, int height)
+        {
+        }
 
         /// <summary>
         /// Set the icon for the window.
@@ -164,15 +168,15 @@ namespace VkGLFW3
                 SetWindowIcon(Handle, 1, IntPtr.Zero);
                 return;
             }
-            
-            var images = new [] {ImageDescriptor_Internal.MarshalPixels(image.Value)};
-            
+
+            var images = new[] {ImageDescriptor_Internal.MarshalPixels(image.Value)};
+
             IntPtr ptr;
             fixed (ImageDescriptor_Internal* array = images)
                 ptr = new IntPtr((void*) array);
 
             SetWindowIcon(Handle, 1, ptr);
-            
+
             images[0].FreePixels();
         }
 
@@ -204,6 +208,36 @@ namespace VkGLFW3
             }
         }
 
+        #region Vulkan Support
+
+        public bool VulkanSupported => Convert.ToBoolean(VulkanSupported_());
+
+        public unsafe string[] RequiredInstanceExtensions
+        {
+            get
+            {
+                // We get to do some fun unsafe memory manipulation to manually marshal the returned strings
+                sbyte** nativeArr = GetRequiredInstanceExtensions(out uint count);
+
+                string[] extensions = new string[count];
+
+                for (int i = 0; i < count; i++)
+                {
+                    sbyte* value = nativeArr[i];
+                    extensions[i] = new string(value);
+                }
+
+                return extensions;
+            }
+        }
+
+        public VkResult CreateWindowSurface(IntPtr instance, IntPtr allocator)
+        {
+            return VkResult.VK_NOT_READY;
+        }
+
+        #endregion
+
         #region Native Bindings
 
         [SuppressUnmanagedCodeSecurity]
@@ -234,13 +268,13 @@ namespace VkGLFW3
         [SuppressUnmanagedCodeSecurity]
         [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwGetWindowSize")]
         private static extern unsafe void GetWindowSize(IntPtr window, int* width, int* height);
-        
+
         [SuppressUnmanagedCodeSecurity]
-        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint="glfwSetWindowIcon")]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwSetWindowIcon")]
         internal static extern void SetWindowIcon(IntPtr window, int count, IntPtr images);
-        
+
         [SuppressUnmanagedCodeSecurity]
-        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint="glfwPollEvents")]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwPollEvents")]
         private static extern void PollEvents_();
 
         [SuppressUnmanagedCodeSecurity]
@@ -273,6 +307,29 @@ namespace VkGLFW3
         /// <param name="mods"> Bit field describing which modifier keys are held down. </param>
         [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         private delegate void GlfwKeyFun(IntPtr window, int key, int scancode, int action, int mods);
+
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "glfwGetPhysicalDevicePresentationSupport")]
+        public static extern int GetPhysicalDevicePresentationSupport(IntPtr instance, IntPtr device, uint queuefamily);
+
+        /// <summary>
+        /// Create a Vulkan window surface with the specified handles.
+        /// </summary>
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "glfwCreateWindowSurface")]
+        public static extern VkResult CreateWindowSurface(IntPtr instance, IntPtr window, IntPtr allocator,
+            Int64 surface);
+
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwVulkanSupported")]
+        private static extern int VulkanSupported_();
+
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "glfwGetRequiredInstanceExtensions", CharSet = CharSet.Ansi)]
+        private static extern unsafe sbyte** GetRequiredInstanceExtensions(out uint count);
 
         #endregion
 
