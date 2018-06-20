@@ -10,7 +10,8 @@ Mono 5.4+ runtimes as per the [.NET Implementation Support Table](https://docs.m
 This library only supports x64 platforms! Windows is currently fully supported (Linux and OSX should work but are untested). Make sure to copy the relevent `glfw` library file to your output directory - a common way to do so is by including the following line in your console application CSproj file:
 
 ```
-<Content Include="glfw3.dll" CopyToOutputDirectory="PreserveNewest" Visible="true" />```
+<Content Include="glfw3.dll" CopyToOutputDirectory="PreserveNewest" Visible="true" />
+```
 
 
 Documentation is available on [Github Pages](https://wardbenjamin.github.io/VkGLFW3/annotated.html), but here's a small minimal feature example:
