@@ -1,4 +1,4 @@
-# VkGLFW3
+# VkGLFW3 0.3.0
 
 Vulkan-focused C# 7 (.NET Standard 2.0) object-oriented window/input system based on GLFW3
 

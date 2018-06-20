@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>WardBenjamin</Authors>
-    <Version>0.2.0</Version>
+    <Version>0.3.0</Version>
     <Description>Vulkan-focused C# 7 (.NET Standard 2.0) object-oriented window/input system based on GLFW3</Description>
     <Copyright>Benjamin Ward 2018</Copyright>
     <RepositoryUrl>https://github.com/WardBenjamin/VkGLFW3</RepositoryUrl>
