@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init',['Init',['../class_vk_g_l_f_w3_1_1_glfw.html#ab72364472b19b91bc2dec5a7d2d400b8',1,'VkGLFW3::Glfw']]]
+  ['pollevents',['PollEvents',['../class_vk_g_l_f_w3_1_1_window.html#a393d97e41ed16a0ac80e720a093e9455',1,'VkGLFW3::Window']]]
 ];

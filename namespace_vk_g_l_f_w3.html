@@ -105,6 +105,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_vk_g_l_f_w3_1_1_size_changed_event_args.html">SizeChangedEventArgs</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event args for the size changed event.  <a href="struct_vk_g_l_f_w3_1_1_size_changed_event_args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>VkGlfw</b></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vk_g_l_f_w3_1_1_window.html">Window</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a native window handle and acts as the main entry point for all GLFW functionality, excluding Init and Terminate.  <a href="class_vk_g_l_f_w3_1_1_window.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,47 +124,6 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespace_vk_g_l_f_w3.html#a18c6fad559c6e07a6cf959bb0e113c43a0ce3266d4eb71ad50f7a90aee6d21dcd">KeyModifier.Super</a> = 8
  }</td></tr>
 <tr class="separator:a18c6fad559c6e07a6cf959bb0e113c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae667fee6bbf99b531249f36aa7abcc58"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58">VkResult</a> { <br />
-&#160;&#160;<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a38d5f94ff3b5c804dbd0ebf9e55652ed">VkResult.VK_SUCCESS</a> = 0, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58ae0a007c3fe0b9cff058dbbdb5469a5ea">VkResult.VK_NOT_READY</a> = 1, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a91c2e09f15a6a4d9ea4f98d517fb849a">VkResult.VK_TIMEOUT</a> = 2, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58aba7eab2ae7c4c9a2987f169abb3fb46d">VkResult.VK_EVENT_SET</a> = 3, 
-<br />
-&#160;&#160;<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a1a0bf7c1226f85be2383f56acdea6a74">VkResult.VK_EVENT_RESET</a> = 4, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58af1145dd865ba5d58d86c371232340930">VkResult.VK_INCOMPLETE</a> = 5, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a10696925ac56c2cdb0b15186315750e1">VkResult.VK_ERROR_OUT_OF_HOST_MEMORY</a> = -1, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a6cb8b845dd46f0536572941ab94f552d">VkResult.VK_ERROR_OUT_OF_DEVICE_MEMORY</a> = -2, 
-<br />
-&#160;&#160;<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a8c9d464aedf0a8ec346045605df7dc27">VkResult.VK_ERROR_INITIALIZATION_FAILED</a> = -3, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58af0084f1caadb7df706a490c09715c345">VkResult.VK_ERROR_DEVICE_LOST</a> = -4, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58ac82766ea9a5e5f3b6cf0c74676a51dd3">VkResult.VK_ERROR_MEMORY_MAP_FAILED</a> = -5, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a875a64a15f75774f0b7d6f5d1e275d0b">VkResult.VK_ERROR_LAYER_NOT_PRESENT</a> = -6, 
-<br />
-&#160;&#160;<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a81f008be6232e4273586f7d474051c0a">VkResult.VK_ERROR_EXTENSION_NOT_PRESENT</a> = -7, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58ae81477fcd87701f18614dd8fbf6f8516">VkResult.VK_ERROR_FEATURE_NOT_PRESENT</a> = -8, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58adbd1783db37094e607ea1ea8412556a8">VkResult.VK_ERROR_INCOMPATIBLE_DRIVER</a> = -9, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58acbac1c2316dfe218508f2afb5e53342b">VkResult.VK_ERROR_TOO_MANY_OBJECTS</a> = -10, 
-<br />
-&#160;&#160;<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a0f5746690e3e14cb5ce8a8e5a3b618a9">VkResult.VK_ERROR_FORMAT_NOT_SUPPORTED</a> = -11, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58aa479363b2b6542599edd9bf5ed1bfacf">VkResult.VK_ERROR_FRAGMENTED_POOL</a> = -12, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a56071ed237a789169dc0598dd361b89d">VkResult.VK_ERROR_SURFACE_LOST_KHR</a> = -1000000000, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a1068b35ffc66824759004999c3a4a785">VkResult.VK_ERROR_NATIVE_WINDOW_IN_USE_KHR</a> = -1000000001, 
-<br />
-&#160;&#160;<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a066cd029f270bdb7f75844ec60b1cdd0">VkResult.VK_SUBOPTIMAL_KHR</a> = 1000001003, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a376d77518206e936307110e2ab53d95c">VkResult.VK_ERROR_OUT_OF_DATE_KHR</a> = -1000001004, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a2c1cc333bc0e8b33e31817d2bb26b56a">VkResult.VK_ERROR_INCOMPATIBLE_DISPLAY_KHR</a> = -1000003001, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a9635ca2dfcd188f79a0854a5df7c6d66">VkResult.VK_ERROR_VALIDATION_FAILED_EXT</a> = -1000011001, 
-<br />
-&#160;&#160;<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a2bb0738a864bc369e3da2db97d07ae01">VkResult.VK_ERROR_INVALID_SHADER_NV</a> = -1000012000, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a563b45f463f83194c4054105d6f379ad">VkResult.VK_ERROR_OUT_OF_POOL_MEMORY_KHR</a> = -1000069000, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58adc471d35d20915048eac550df75646c0">VkResult.VK_RESULT_BEGIN_RANGE</a> = -12, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a6a32c0af18e1adf60bfb43f280e47f2c">VkResult.VK_RESULT_END_RANGE</a> = 5, 
-<br />
-&#160;&#160;<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58a4d105a6282a3ae179ebd1305240b1a18">VkResult.VK_RESULT_RANGE_SIZE</a> = 18, 
-<a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58abe53d32d65cbd294646465f56ad03fc7">VkResult.VK_RESULT_MAX_ENUM</a> = 2147483647
-<br />
- }</td></tr>
-<tr class="separator:ae667fee6bbf99b531249f36aa7abcc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb2bf749b717acdc27dc33832941c3d4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_vk_g_l_f_w3.html#acb2bf749b717acdc27dc33832941c3d4">Key</a> { <br />
 &#160;&#160;<a class="el" href="namespace_vk_g_l_f_w3.html#acb2bf749b717acdc27dc33832941c3d4a88183b946cc5f0e8c96b2e66e1c74a7e">Key.Unknown</a> = -1, 
 <a class="el" href="namespace_vk_g_l_f_w3.html#acb2bf749b717acdc27dc33832941c3d4ad511f8439ecde36647437fbba67a4394">Key.Space</a> = 32, 
@@ -797,90 +758,6 @@ Enumerations</h2></td></tr>
 </table>
 
 <p>Definition at line <a class="el" href="_glfw_8_enum_8cs_source.html#l00163">163</a> of file <a class="el" href="_glfw_8_enum_8cs_source.html">Glfw.Enum.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespace_vk_g_l_f_w3.html#ae667fee6bbf99b531249f36aa7abcc58">VkGLFW3.VkResult</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a38d5f94ff3b5c804dbd0ebf9e55652ed"></a>VK_SUCCESS&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58ae0a007c3fe0b9cff058dbbdb5469a5ea"></a>VK_NOT_READY&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a91c2e09f15a6a4d9ea4f98d517fb849a"></a>VK_TIMEOUT&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58aba7eab2ae7c4c9a2987f169abb3fb46d"></a>VK_EVENT_SET&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a1a0bf7c1226f85be2383f56acdea6a74"></a>VK_EVENT_RESET&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58af1145dd865ba5d58d86c371232340930"></a>VK_INCOMPLETE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a10696925ac56c2cdb0b15186315750e1"></a>VK_ERROR_OUT_OF_HOST_MEMORY&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a6cb8b845dd46f0536572941ab94f552d"></a>VK_ERROR_OUT_OF_DEVICE_MEMORY&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a8c9d464aedf0a8ec346045605df7dc27"></a>VK_ERROR_INITIALIZATION_FAILED&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58af0084f1caadb7df706a490c09715c345"></a>VK_ERROR_DEVICE_LOST&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58ac82766ea9a5e5f3b6cf0c74676a51dd3"></a>VK_ERROR_MEMORY_MAP_FAILED&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a875a64a15f75774f0b7d6f5d1e275d0b"></a>VK_ERROR_LAYER_NOT_PRESENT&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a81f008be6232e4273586f7d474051c0a"></a>VK_ERROR_EXTENSION_NOT_PRESENT&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58ae81477fcd87701f18614dd8fbf6f8516"></a>VK_ERROR_FEATURE_NOT_PRESENT&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58adbd1783db37094e607ea1ea8412556a8"></a>VK_ERROR_INCOMPATIBLE_DRIVER&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58acbac1c2316dfe218508f2afb5e53342b"></a>VK_ERROR_TOO_MANY_OBJECTS&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a0f5746690e3e14cb5ce8a8e5a3b618a9"></a>VK_ERROR_FORMAT_NOT_SUPPORTED&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58aa479363b2b6542599edd9bf5ed1bfacf"></a>VK_ERROR_FRAGMENTED_POOL&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a56071ed237a789169dc0598dd361b89d"></a>VK_ERROR_SURFACE_LOST_KHR&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a1068b35ffc66824759004999c3a4a785"></a>VK_ERROR_NATIVE_WINDOW_IN_USE_KHR&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a066cd029f270bdb7f75844ec60b1cdd0"></a>VK_SUBOPTIMAL_KHR&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a376d77518206e936307110e2ab53d95c"></a>VK_ERROR_OUT_OF_DATE_KHR&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a2c1cc333bc0e8b33e31817d2bb26b56a"></a>VK_ERROR_INCOMPATIBLE_DISPLAY_KHR&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a9635ca2dfcd188f79a0854a5df7c6d66"></a>VK_ERROR_VALIDATION_FAILED_EXT&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a2bb0738a864bc369e3da2db97d07ae01"></a>VK_ERROR_INVALID_SHADER_NV&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a563b45f463f83194c4054105d6f379ad"></a>VK_ERROR_OUT_OF_POOL_MEMORY_KHR&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58adc471d35d20915048eac550df75646c0"></a>VK_RESULT_BEGIN_RANGE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a6a32c0af18e1adf60bfb43f280e47f2c"></a>VK_RESULT_END_RANGE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58a4d105a6282a3ae179ebd1305240b1a18"></a>VK_RESULT_RANGE_SIZE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae667fee6bbf99b531249f36aa7abcc58abe53d32d65cbd294646465f56ad03fc7"></a>VK_RESULT_MAX_ENUM&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="_glfw_8_enum_8cs_source.html#l00003">3</a> of file <a class="el" href="_glfw_8_enum_8cs_source.html">Glfw.Enum.cs</a>.</p>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resizable',['Resizable',['../class_vk_g_l_f_w3_1_1_window.html#af6483d563cc654118caaa00a8662887b',1,'VkGLFW3::Window']]]
+  ['visible',['Visible',['../class_vk_g_l_f_w3_1_1_window.html#a17b38305de1a5f13d826c8793de0c6c6',1,'VkGLFW3::Window']]]
 ];
