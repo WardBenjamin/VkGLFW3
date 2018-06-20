@@ -163,7 +163,7 @@ namespace VkGLFW3
         }
 
         /// <summary>
-        /// Not implemented. Sets the size of the client area of the specified window. 
+        /// Sets the size of the client area of the specified window. 
         /// </summary>
         /// <remarks>
         /// This function sets the size, in screen coordinates, of the client area of the specified window.
@@ -175,6 +175,7 @@ namespace VkGLFW3
         /// <param name="height">Height, in screen coordinates</param>
         public void SetSize(int width, int height)
         {
+            SetWindowSize(Handle, width, height);
         }
 
         /// <summary>
@@ -231,36 +232,6 @@ namespace VkGLFW3
             }
         }
 
-        #region Vulkan Support
-
-        public bool VulkanSupported => Convert.ToBoolean(VulkanSupported_());
-
-        public unsafe string[] RequiredInstanceExtensions
-        {
-            get
-            {
-                // We get to do some fun unsafe memory manipulation to manually marshal the returned strings
-                sbyte** nativeArr = GetRequiredInstanceExtensions(out uint count);
-
-                string[] extensions = new string[count];
-
-                for (int i = 0; i < count; i++)
-                {
-                    sbyte* value = nativeArr[i];
-                    extensions[i] = new string(value);
-                }
-
-                return extensions;
-            }
-        }
-
-        public VkResult CreateWindowSurface(IntPtr instance, IntPtr allocator)
-        {
-            return VkResult.VK_NOT_READY;
-        }
-
-        #endregion
-
         #region Native Bindings
 
         [SuppressUnmanagedCodeSecurity]
@@ -291,6 +262,10 @@ namespace VkGLFW3
         [SuppressUnmanagedCodeSecurity]
         [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwGetWindowSize")]
         private static extern unsafe void GetWindowSize(IntPtr window, int* width, int* height);
+        
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint="glfwSetWindowSize")]
+        private static extern void SetWindowSize(IntPtr window, int width, int height);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwSetWindowIcon")]
@@ -340,24 +315,6 @@ namespace VkGLFW3
         [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "glfwGetPhysicalDevicePresentationSupport")]
         public static extern int GetPhysicalDevicePresentationSupport(IntPtr instance, IntPtr device, uint queuefamily);
-
-        /// <summary>
-        /// Create a Vulkan window surface with the specified handles.
-        /// </summary>
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
-            EntryPoint = "glfwCreateWindowSurface")]
-        private static extern VkResult CreateWindowSurface(IntPtr instance, IntPtr window, IntPtr allocator,
-            Int64 surface);
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwVulkanSupported")]
-        private static extern int VulkanSupported_();
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
-            EntryPoint = "glfwGetRequiredInstanceExtensions", CharSet = CharSet.Ansi)]
-        private static extern unsafe sbyte** GetRequiredInstanceExtensions(out uint count);
 
         #endregion
 

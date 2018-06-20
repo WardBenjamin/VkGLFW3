@@ -20,12 +20,12 @@ namespace VkGLFW3
         [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "glfwCreateWindowSurface")]
         /// Creates a window surface with the specified handles        
-        public static extern VkResult CreateWindowSurface(IntPtr instance, IntPtr window, IntPtr allocator, Int64 surface);
+        internal static extern VkResult CreateWindowSurface(IntPtr instance, IntPtr window, IntPtr allocator, Int64 surface);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "glfwCreateWindowSurface")]
         /// Creates a window surface with the specified handles
-        public static extern VkResult CreateWindowSurface(UIntPtr instance, UIntPtr window, UIntPtr allocator, UInt64 surface);
+        internal static extern VkResult CreateWindowSurface(UIntPtr instance, UIntPtr window, UIntPtr allocator, UInt64 surface);
     }
 }

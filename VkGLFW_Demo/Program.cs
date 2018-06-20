@@ -8,13 +8,14 @@ namespace VkGLFW_Demo
     {
         static void Main(string[] args)
         {
-            Glfw.Init();
+            VkGlfw.Init();
             var window = new Window(800, 600, "VkGLFW3 Demo");
 
             Console.WriteLine("Window size: {0}", window.GetSize());
-            Console.WriteLine("Vulkan supported: {0}", window.VulkanSupported);
-            Console.WriteLine("Required Vulkan instance extensions: {0}", string.Join(", ", window.RequiredInstanceExtensions));
             Console.WriteLine("Window title: {0}", window.Title);
+            
+            Console.WriteLine("Vulkan supported: {0}", VkGlfw.VulkanSupported);
+            Console.WriteLine("Required Vulkan instance extensions: {0}", string.Join(", ", VkGlfw.RequiredInstanceExtensions));
 
             window.Title = "Test";
             
@@ -24,7 +25,7 @@ namespace VkGLFW_Demo
             }
 
             window.Dispose();
-            Glfw.Terminate();
+            VkGlfw.Terminate();
         }
     }
 }

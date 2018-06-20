@@ -1,6 +1,6 @@
 ﻿namespace VkGLFW3
 {
-    public enum VkResult
+    internal enum VkResult
     {
         VK_SUCCESS = 0,
         VK_NOT_READY = 1,
